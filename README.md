@@ -18,4 +18,4 @@ For instructions on running the code, please consult the README in each folder.
 
 ## License
 
-This code is released under the MIT License. See LICENSE.txt.
+This code is released under the MIT License. See LICENSE file.
