@@ -2,7 +2,7 @@
 
 This folder contains a module example of a Terraform file (https://www.terraform.io/).
 
-It shows how to manage using a module web server clusters in two environments:
+It shows how to develop (not duplicating code) web server clusters in different environments using a module. The environments are:
 * Staging (stage)
 * Production (prod)
 
