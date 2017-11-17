@@ -10,6 +10,8 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
 * You must have an [Amazon Web Services (AWS) account](http://aws.amazon.com/).
 * You must deploy the MySQL database in [data-stores/mysql](../../data-stores/mysql) BEFORE deploying the
   templates in this folder.
+* It use a Terraform module. See
+[module/services/webserver-cluster](../../../stage/services-webserver-cluster).
 
 This code was written for Terraform 0.10.x.
 
