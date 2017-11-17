@@ -2,11 +2,11 @@
 
 This folder contains a module example of a Terraform file (https://www.terraform.io/).
 
-It shows how to manage two environments:
+It shows how to manage using a module web server clusters in two environments:
 * Staging (stage)
 * Production (prod)
 
-It uses for common:
+It uses in common for both environments:
 * Terraform Remote State example: [global/s3](global/s3)
 * Terraform Web Server Cluster module example: [modules/services/webserver-cluster](modules/services/webserver-cluster)
 
