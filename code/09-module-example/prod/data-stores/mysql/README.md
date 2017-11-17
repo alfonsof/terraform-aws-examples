@@ -26,12 +26,6 @@ Deploy the changes:
 terraform apply
 ```
 
-Test the cluster of web servers. When the `apply` command completes, it will output the DNS name of the load balancer.
-
-```
-curl http://(elb_dns_name)/
-```
-
 Clean up the resources created when you have finished:
 
 ```
