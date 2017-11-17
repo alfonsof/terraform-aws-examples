@@ -1,6 +1,6 @@
 # Terraform File Layout example
 
-This folder contains a File Layaout example of a Terraform file (https://www.terraform.io/).
+This folder contains a File Layout example of a Terraform file (https://www.terraform.io/).
 
 It uses:
 * Terraform Remote State example: [global/s3](global/s3)
@@ -19,7 +19,7 @@ This code was written for Terraform 0.10.x.
 
 Configure your AWS access keys
 
-Use Terraform Remote State example for creating the remote state. See: [global/s3](global/s3)
+Use Terraform Remote State example for creating the remote state bucket. See: [global/s3](global/s3)
 
 Use Terraform MySQL on RDS example for creating a MySQL database. See: [stage/data-stores/mysql](stage/data-stores/mysql)
 
