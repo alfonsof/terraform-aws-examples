@@ -6,13 +6,17 @@ It shows how to manage two environments:
 * Staging (stage)
 * Production (prod)
 
-It uses:
+It uses for common:
 * Terraform Remote State example: [global/s3](global/s3)
 * Terraform Web Server Cluster module example: [modules/services/webserver-cluster](modules/services/webserver-cluster)
+
+It uses for staging environment:
 * Terraform MySQL on RDS example (staging environment): [stage/data-stores/mysql](stage/data-stores/mysql)
 * Terraform Web Server Cluster example (staging environment): [stage/services/webserver-cluster](stage/services/webserver-cluster)
-* Terraform MySQL on RDS example (production environment): [prod/data-stores/mysql](stage/data-stores/mysql)
-* Terraform Web Server Cluster example (production environment): [prod/services/webserver-cluster](stage/services/webserver-cluster)
+
+It uses for production environment:
+* Terraform MySQL on RDS example (production environment): [prod/data-stores/mysql](prod/data-stores/mysql)
+* Terraform Web Server Cluster example (production environment): [prod/services/webserver-cluster](prod/services/webserver-cluster)
 
 
 ## Requirements
@@ -34,6 +38,6 @@ Use Terraform MySQL on RDS example for creating a MySQL database in the staging 
 
 Use Terraform Web Server Cluster example for creating a web server cluster in the staging environment. See: [stage/services/webserver-cluster](stage/services/webserver-cluster)
 
-Use Terraform MySQL on RDS example for creating a MySQL database in the production environment. See: [prod/data-stores/mysql](stage/data-stores/mysql)
+Use Terraform MySQL on RDS example for creating a MySQL database in the production environment. See: [prod/data-stores/mysql](prod/data-stores/mysql)
 
-Use Terraform Web Server Cluster example for creating a web server cluster in the production environment. See: [prod/services/webserver-cluster](stage/services/webserver-cluster)
+Use Terraform Web Server Cluster example for creating a web server cluster in the production environment. See: [prod/services/webserver-cluster](prod/services/webserver-cluster)
