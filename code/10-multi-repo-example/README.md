@@ -37,7 +37,7 @@ Use Terraform module example (in another repo) for Web Server Cluster example in
 
 Use Terraform MySQL on RDS example for creating a MySQL database in the staging environment. See: [live/stage/data-stores/mysql](live/stage/data-stores/mysql)
 
-Use Terraform Web Server Cluster example (in another repo) for creating a web server cluster in the staging environment. See: [https://github.com/alfonsof/terraform-examples-repo-aws](https://github.com/alfonsof/terraform-examples-repo-aws)
+Use Terraform Web Server Cluster example (in another repo) for creating a web server cluster in the staging environment. See: [live/stage/services/webserver-cluster](live/stage/services/webserver-cluster)
 
 Use Terraform MySQL on RDS example for creating a MySQL database in the production environment. See: [live/prod/data-stores/mysql](live/prod/data-stores/mysql)
 
