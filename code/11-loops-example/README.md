@@ -1,4 +1,4 @@
-# Terraform Loops example example
+# Terraform Loops example
 
 This folder contains the loops example of a Terraform file (https://www.terraform.io/).
 This Terraform file create 3 IAM users, create an IAM policy and attach the IAM policy to the IAM users.
