@@ -1,6 +1,7 @@
 # Terraform Loops example
 
-This folder contains the loops example of a Terraform file (https://www.terraform.io/).
+This folder contains the loops example of a Terraform file (https://www.terraform.io/). It shows how loops work in Terraform.
+
 This Terraform file create 3 IAM users, create an IAM policy and attach the IAM policy to the IAM users.
 
 We use the meta-paramenter "count" and two interpolation functions:
