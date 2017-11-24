@@ -2,7 +2,9 @@
 
 This folder contains a If-Statements and If-Else-Statements example of a Terraform file (https://www.terraform.io/).
 
-It shows how to use a simple If-Statement funcionality using an "enable_autoscaling" variable in the module in order to execute or not the resources:
+It shows how to use a:
+
+1) simple If-Statement funcionality using an "enable_autoscaling" variable in the module in order to execute or not the resources:
 
 * resource "aws_autoscaling_schedule" "scale_out_during_business_hours"
 * resource "aws_autoscaling_schedule" "scale_in_at_night"
@@ -12,21 +14,27 @@ Defining the values of "enable_autoscaling" variable:
 * true (= 1) in Production
 * false (= 0) in Staging
 
-It shows how to use a more complicated If-Statement funcionality using the "instance_type" variable in the module in order to execute or not the resources:
+2) more complicated If-Statement funcionality using the "instance_type" variable in the module in order to execute or not the resource:
 
 * resource "aws_cloudwatch_metric_alarm" "low_cpu_credit_balance"
 
-With: count = "${format("%.1s", var.instance_type) == "t" ? 1 : 0}"
+and using:
 
-* true (= 1) if "var.instance_type" begin with "t" (e.g., t2.micro)
-* false (= 0) if "var.instance_type" not begin with "t"
+count = "${format("%.1s", var.instance_type) == "t" ? 1 : 0}"
 
-It shows how to use a more complicated If-Else-Statement funcionality using a "enable_new_user_data" variable in the module in order to a data script or another:
+where:
+
+* true (= 1) if "var.instance_type" start with a letter "t" (e.g., t2.micro)
+* false (= 0) if "var.instance_type" does not start with a letter  "t"
+
+3) a more complicated If-Else-Statement funcionality using a "enable_new_user_data" variable in the module in order to a data script or another:
 
 * if "enable_new_user_data" is true (staging environment) the execute "user_data_new.sh"
 * if "enable_new_user_data" is false (production environment) the execute "user_data.sh"
 
-It shows how to develop (not duplicating code) web server clusters in different environments using a module. The environments are:
+
+
+Furthermore, it shows how to develop (not duplicating code) web server clusters in different environments using a module. The environments are:
 * Staging (stage)
 * Production (prod)
 
