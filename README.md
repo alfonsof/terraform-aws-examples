@@ -1,4 +1,4 @@
-# Terraform examples AWS
+# Terraform examples on AWS (Amazon Web Services)
 
 This repo contains Terraform code examples on the Amazon Web Services (AWS) platform.
 
