@@ -14,7 +14,7 @@ resource "aws_security_group" "instance" {
 }
 
 resource "aws_instance" "example" {
-  ami = "ami-785db401"
+  ami           = "ami-785db401"
   instance_type = "t2.micro"
   vpc_security_group_ids = ["${aws_security_group.instance.id}"]
   
@@ -29,3 +29,6 @@ resource "aws_instance" "example" {
   }
 }
 
+output "public_ip" {
+  value = "${aws_instance.example.public_ip}"
+}
