@@ -1,8 +1,3 @@
-variable "server_port" {
-  description = "The port the server will use for HTTP requests"
-  default = "8080"
-}
-
 provider "aws" {
   region = "eu-west-1"
 }
@@ -94,8 +89,4 @@ resource "aws_elb" "example" {
     interval            = 30
     target              = "HTTP:${var.server_port}/"
   }
-}
-
-output "elb_dns_name" {
-  value = "${aws_elb.example.dns_name}"
 }
