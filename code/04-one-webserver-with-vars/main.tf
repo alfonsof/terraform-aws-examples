@@ -1,8 +1,3 @@
-variable "server_port" {
-  description = "The port the server will use for HTTP requests"
-  default = "8080"
-}
-
 provider "aws" {
   region = "eu-west-1"
 }
@@ -32,8 +27,4 @@ resource "aws_instance" "example" {
   tags {
     Name = "terraform-example"
   }
-}
-
-output "public_ip" {
-  value = "${aws_instance.example.public_ip}"
 }
