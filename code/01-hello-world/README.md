@@ -1,15 +1,14 @@
 # Terraform "Hello, World" example
 
-This folder contains a "Hello, World" example of a [Terraform](https://www.terraform.io/) file.
+This folder contains a "Hello, World" example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 
-This Terraform file deploys a single server in Amazon Web Services (AWS).
+This Terraform file deploys a single server on Amazon Web Services (AWS).
 
 ## Requirements
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
-* You must have an [Amazon Web Services (AWS) account](http://aws.amazon.com/).
-
-This code was written for Terraform 0.10.x.
+* You must have an [AWS (Amazon Web Services) account](http://aws.amazon.com/).
+* This code was written for Terraform 0.10.x.
 
 ## Using the code
 

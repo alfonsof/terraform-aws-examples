@@ -1,15 +1,14 @@
 # Terraform Web Server example
 
-This folder contains a web server example of a [Terraform](https://www.terraform.io/) file.
+This folder contains a web server example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 
-This Terraform file deploys a single web server in Amazon Web Services (AWS). The web server returns "Hello, World" for the URL `/` listening on port 8080.
+This Terraform file deploys a single web server on AWS (Amazon Web Services). The web server returns "Hello, World" for the URL `/` listening on port 8080.
 
 ## Requirements
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
-* You must have an [Amazon Web Services (AWS) account](http://aws.amazon.com/).
-
-This code was written for Terraform 0.10.x.
+* You must have an [AWS (Amazon Web Services) account](http://aws.amazon.com/).
+* This code was written for Terraform 0.10.x.
 
 ## Using the code
 

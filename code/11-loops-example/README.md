@@ -1,6 +1,6 @@
 # Terraform Loops example
 
-This folder contains the loops example of a [Terraform](https://www.terraform.io/) file.
+This folder contains the loops example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 
 It shows how do loops in Terraform.
 
@@ -14,9 +14,8 @@ We use the meta-paramenter "count" and two interpolation functions:
 ## Requirements
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
-* You must have an [Amazon Web Services (AWS) account](http://aws.amazon.com/).
-
-This code was written for Terraform 0.10.x.
+* You must have an [AWS (Amazon Web Services) account](http://aws.amazon.com/).
+* This code was written for Terraform 0.10.x.
 
 ## Using the code
 
