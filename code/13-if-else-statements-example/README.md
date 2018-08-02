@@ -19,7 +19,7 @@ We use "give_neo_cloudwatch_full_access" variable in order to give one of the us
 ## Requirements
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
-* You must have an [AWS (Amazon Web Services) account](http://aws.amazon.com/).
+* You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
 * This code was written for Terraform 0.10.x.
 
 ## Using the code
