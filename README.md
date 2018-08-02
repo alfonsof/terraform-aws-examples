@@ -1,6 +1,6 @@
 # Terraform examples on AWS (Amazon Web Services)
 
-This repo contains [Terraform](https://www.terraform.io/) code examples on the Amazon Web Services (AWS) platform.
+This repo contains [Terraform](https://www.terraform.io/) code examples on the Amazon Web Services (AWS).
 
 These are based in the book *[Terraform: Up and Running](http://www.terraformupandrunning.com)* by [Yevgeniy Brikman](http://www.ybrikman.com).
 
