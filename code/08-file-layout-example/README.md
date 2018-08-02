@@ -1,8 +1,9 @@
 # Terraform File Layout example
 
-This folder contains a File Layout example of a Terraform file (https://www.terraform.io/).
+This folder contains a File Layout example of a [Terraform](https://www.terraform.io/) file.
 
 It uses:
+
 * Terraform Remote State example: [global/s3](global/s3)
 * Terraform MySQL on RDS example: [stage/data-stores/mysql](stage/data-stores/mysql)
 * Terraform Web Server Cluster example: [stage/services/webserver-cluster](stage/services/webserver-cluster)
@@ -10,14 +11,14 @@ It uses:
 
 ## Requirements
 
-* You must have [Terraform](https://www.terraform.io/) installed on your computer. 
+* You must have [Terraform](https://www.terraform.io/) installed on your computer.
 * You must have an [Amazon Web Services (AWS) account](http://aws.amazon.com/).
 
 This code was written for Terraform 0.10.x.
 
 ## Using the code
 
-Configure your AWS access keys
+Configure your AWS access keys.
 
 Use Terraform Remote State example for creating the remote state bucket. See: [global/s3](global/s3)
 

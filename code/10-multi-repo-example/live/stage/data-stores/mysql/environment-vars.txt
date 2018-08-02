@@ -1,0 +1,1 @@
+export TF_VAR_db_password="hola1010"

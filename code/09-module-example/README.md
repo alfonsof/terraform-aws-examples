@@ -1,34 +1,37 @@
 # Terraform Module example
 
-This folder contains a module example of a Terraform file (https://www.terraform.io/).
+This folder contains a module example of a [Terraform](https://www.terraform.io/) file.
 
 It shows how to develop (not duplicating code) web server clusters in different environments using a module. The environments are:
+
 * Staging (stage)
 * Production (prod)
 
 It uses in common for both environments:
+
 * Terraform Remote State example: [global/s3](global/s3)
 * Terraform Web Server Cluster module example: [modules/services/webserver-cluster](modules/services/webserver-cluster)
 
 It uses for staging environment:
+
 * Terraform MySQL on RDS example (staging environment): [stage/data-stores/mysql](stage/data-stores/mysql)
 * Terraform Web Server Cluster example (staging environment): [stage/services/webserver-cluster](stage/services/webserver-cluster)
 
 It uses for production environment:
+
 * Terraform MySQL on RDS example (production environment): [prod/data-stores/mysql](prod/data-stores/mysql)
 * Terraform Web Server Cluster example (production environment): [prod/services/webserver-cluster](prod/services/webserver-cluster)
 
-
 ## Requirements
 
-* You must have [Terraform](https://www.terraform.io/) installed on your computer. 
+* You must have [Terraform](https://www.terraform.io/) installed on your computer.
 * You must have an [Amazon Web Services (AWS) account](http://aws.amazon.com/).
 
 This code was written for Terraform 0.10.x.
 
 ## Using the code
 
-Configure your AWS access keys
+Configure your AWS access keys.
 
 Use Terraform Remote State example for creating the remote state bucket. See: [global/s3](global/s3)
 
