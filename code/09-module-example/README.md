@@ -30,16 +30,61 @@ It uses for production environment:
 
 ## Using the code
 
-Configure your AWS access keys.
+* Configure your AWS access keys.
 
-Use Terraform Remote State example for creating the remote state bucket. See: [global/s3](global/s3)
+  **Important:** For security, it is strongly recommend that you use IAM users instead of the root account for AWS access.
 
-Use Terraform module example for Web Server Cluster example in the staging environment and Web Server Cluster example in the production environment. See: [modules/services/webserver-cluster](modules/services/webserver-cluster)
+  Setting your credentials for use by Terraform can be done in a number of ways, but here are the recommended approaches:
 
-Use Terraform MySQL on RDS example for creating a MySQL database in the staging environment. See: [stage/data-stores/mysql](stage/data-stores/mysql)
+  * The default credentials file
+  
+    Set credentials in the AWS credentials profile file on your local system, located at:
 
-Use Terraform Web Server Cluster example for creating a web server cluster in the staging environment. See: [stage/services/webserver-cluster](stage/services/webserver-cluster)
+    `~/.aws/credentials` on Linux, macOS, or Unix
 
-Use Terraform MySQL on RDS example for creating a MySQL database in the production environment. See: [prod/data-stores/mysql](prod/data-stores/mysql)
+    `C:\Users\USERNAME\.aws\credentials` on Windows
 
-Use Terraform Web Server Cluster example for creating a web server cluster in the production environment. See: [prod/services/webserver-cluster](prod/services/webserver-cluster)
+    This file should contain lines in the following format:
+
+    ```bash
+    [default]
+    aws_access_key_id = <your_access_key_id>
+    aws_secret_access_key = <your_secret_access_key>
+    ```
+    Substitute your own AWS credentials values for the values `<your_access_key_id>` and `<your_secret_access_key>`.
+
+  * Environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+  
+    Set the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
+
+    To set these variables on Linux, macOS, or Unix, use `export`:
+
+    ```bash
+    export AWS_ACCESS_KEY_ID=<your_access_key_id>
+    export AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
+    ```
+
+    To set these variables on Windows, use `set`:
+
+    ```bash
+    set AWS_ACCESS_KEY_ID=<your_access_key_id>
+    set AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
+    ```
+
+* The first command that should be run after writing a new Terraform configuration is the terraform `init command` in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
+
+  ```bash
+  terraform init
+  ```
+
+* Use Terraform Remote State example for creating the remote state bucket. See: [global/s3](global/s3)
+
+* Use Terraform module example for Web Server Cluster example in the staging environment and Web Server Cluster example in the production environment. See: [modules/services/webserver-cluster](modules/services/webserver-cluster)
+
+* Use Terraform MySQL on RDS example for creating a MySQL database in the staging environment. See: [stage/data-stores/mysql](stage/data-stores/mysql)
+
+* Use Terraform Web Server Cluster example for creating a web server cluster in the staging environment. See: [stage/services/webserver-cluster](stage/services/webserver-cluster)
+
+* Use Terraform MySQL on RDS example for creating a MySQL database in the production environment. See: [prod/data-stores/mysql](prod/data-stores/mysql)
+
+* Use Terraform Web Server Cluster example for creating a web server cluster in the production environment. See: [prod/services/webserver-cluster](prod/services/webserver-cluster)

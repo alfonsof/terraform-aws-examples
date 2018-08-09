@@ -14,28 +14,73 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
 
 ## Using the code
 
-Configure your AWS access keys.
+* Configure your AWS access keys.
 
-Validate the changes:
+  **Important:** For security, it is strongly recommend that you use IAM users instead of the root account for AWS access.
 
-```bash
-terraform plan
-```
+  Setting your credentials for use by Terraform can be done in a number of ways, but here are the recommended approaches:
 
-Deploy the changes:
+  * The default credentials file
+  
+    Set credentials in the AWS credentials profile file on your local system, located at:
 
-```bash
-terraform apply
-```
+    `~/.aws/credentials` on Linux, macOS, or Unix
 
-Test the cluster of web servers. When the `apply` command completes, it will output the DNS name of the load balancer.
+    `C:\Users\USERNAME\.aws\credentials` on Windows
 
-```bash
-curl http://(elb_dns_name)/
-```
+    This file should contain lines in the following format:
 
-Clean up the resources created when you have finished:
+    ```bash
+    [default]
+    aws_access_key_id = <your_access_key_id>
+    aws_secret_access_key = <your_secret_access_key>
+    ```
+    Substitute your own AWS credentials values for the values `<your_access_key_id>` and `<your_secret_access_key>`.
 
-```bash
-terraform destroy
-```
+  * Environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+  
+    Set the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
+
+    To set these variables on Linux, macOS, or Unix, use `export`:
+
+    ```bash
+    export AWS_ACCESS_KEY_ID=<your_access_key_id>
+    export AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
+    ```
+
+    To set these variables on Windows, use `set`:
+
+    ```bash
+    set AWS_ACCESS_KEY_ID=<your_access_key_id>
+    set AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
+    ```
+
+* The first command that should be run after writing a new Terraform configuration is the terraform `init command` in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
+
+  ```bash
+  terraform init
+  ```
+
+* Validate the changes:
+
+  ```bash
+  terraform plan
+  ```
+
+* Deploy the changes:
+
+  ```bash
+  terraform apply
+  ```
+
+* Test the cluster of web servers. When the `apply` command completes, it will output the DNS name of the load balancer.
+
+  ```bash
+  curl http://(elb_dns_name)/
+  ```
+
+* Clean up the resources created when you have finished:
+
+  ```bash
+  terraform destroy
+  ```
