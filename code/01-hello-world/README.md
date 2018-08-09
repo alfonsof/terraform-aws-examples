@@ -12,8 +12,6 @@ This Terraform file deploys a single server on AWS (Amazon Web Services).
 
 ## Using the code
 
-Configure your AWS access keys.
-
 * Configure your AWS access keys.
 
   **Important:** For security, it is strongly recommend that you use IAM users instead of the root account for AWS access.
