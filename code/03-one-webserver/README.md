@@ -71,11 +71,21 @@ This Terraform file deploys a single web server on AWS (Amazon Web Services). Th
   terraform apply
   ```
 
-* Test the web server. When the `apply` command completes, it will output the public IP address of the web server.
+* Test the web server:
 
-  ```bash
-  curl http://(server_public_ip):8080/
-  ```
+  When the `terraform apply` command completes, it will output the public IP address of the web server.
+
+  You can test it in two ways:
+  
+  * Running this command:
+
+    ```bash
+    curl http://(server_public_ip):8080/
+    ```
+
+  * Writing in your browser this URL: `http://(server_public_ip):8080/`
+
+  You should get a `Hello, World` response message.
 
 * Clean up the resources created when you have finished:
 
