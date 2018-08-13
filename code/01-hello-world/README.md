@@ -71,6 +71,10 @@ This Terraform file deploys a single server on AWS (Amazon Web Services).
   terraform apply
   ```
 
+* Test the deploy:
+
+  When the `terraform apply` command completes, use the AWS console, you should see the new EC2 instance.
+
 * Clean up the resources created when you have finished:
 
   ```bash
