@@ -2,7 +2,7 @@
 
 This folder contains the create S3 example of a [Terraform](https://www.terraform.io/) file AWS (Amazon Web Services).
 
-This Terraform file deploys the creation a of a bucket on AWS (Amazon Web Services) using S3.
+This Terraform file deploys the creation of a bucket on AWS (Amazon Web Services) using S3.
 
 ## Requirements
 
@@ -70,6 +70,10 @@ This Terraform file deploys the creation a of a bucket on AWS (Amazon Web Servic
   ```bash
   terraform apply
   ```
+
+* Test the deploy:
+
+  When the `terraform apply` command completes, use the AWS console, you should see the new S3 bucket created.
 
 * Clean up the resources created when you have finished:
 
