@@ -2,7 +2,7 @@
 
 This folder contains a state example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 
-This Terraform file use the S3 bucket created in the previous example (create-s3) to store the information about what infrastructure has been created.
+This Terraform file use the S3 bucket created in the previous example [06-create-s3](../06-create-s3/) to store the information about what infrastructure has been created.
 
 This information is stored in the Terraform state file `terraform.tfstate`. This file contains a JSON format that records a mapping from the representation of the resources on AWS to Terrafom resources in the configuration files.
 
@@ -72,6 +72,12 @@ This information is stored in the Terraform state file `terraform.tfstate`. This
   ```bash
   terraform apply
   ```
+
+* Test the deploy:
+
+  When the `terraform apply` command completes, use the AWS console, you should see the `terraform.tfstate` file created in the S3 bucket.
+
+  The `terraform.tfstate` file is where is stored the terraform state.
 
 * Clean up the resources created when you have finished:
 
