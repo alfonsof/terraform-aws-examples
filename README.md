@@ -14,7 +14,7 @@ All the code is in the [code](/code) folder.
 
 For instructions on running the code, please consult the README in each folder.
 
-You can see the list of examples:
+This is the list of examples:
 
 * [01-hello-world](code/01-hello-world) - Terraform "Hello, World": Example of how to deploy a single server on AWS (Amazon Web Services) using the shortest script.
 * [02-one-server](code/02-one-server) - Terraform One Server: Example of how deploy a single server on AWS (Amazon Web Services).
