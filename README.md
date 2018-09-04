@@ -8,6 +8,8 @@ These examples are based in the book *[Terraform: Up and Running](http://www.ter
 
 ## Quick start
 
+You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
+
 The code consists of Terraform examples using HashiCorp Configuration Language (HCL) on AWS (Amazon Web Services).
 
 All the code is in the [code](/code) folder.
