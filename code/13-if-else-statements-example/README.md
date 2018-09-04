@@ -1,4 +1,4 @@
-# Terraform simple If-Else-Statement example
+# Terraform Simple If-Else-Statement example
 
 This folder contains the simple If-Else-Statement example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 

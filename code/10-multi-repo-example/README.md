@@ -1,4 +1,4 @@
-# Terraform Muti repo example
+# Terraform Muti Repo example
 
 This folder contains a multi repo example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 

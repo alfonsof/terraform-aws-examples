@@ -1,6 +1,6 @@
 # Terraform If-Statements & If-Else-Statements example
 
-This folder contains a If-Statements and If-Else-Statements example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
+This folder contains an If-Statements and If-Else-Statements example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 
 It shows how to use a:
 

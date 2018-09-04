@@ -2,7 +2,7 @@
 
 This folder contains a "Hello, World" example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 
-This Terraform file deploys a single server on AWS (Amazon Web Services).
+This Terraform file deploys a single server on AWS (Amazon Web Services) using the shortest script.
 
 ## Requirements
 
