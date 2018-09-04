@@ -3,7 +3,7 @@ provider "aws" {
 }
  
 module "webserver_cluster" {
-  source = "git::git@github.com:alfonsof/terraform-examples-repo-aws.git//modules/services/webserver-cluster?ref=v0.0.1"
+  source = "git::git@github.com:alfonsof/terraform-aws-repo-examples.git//modules/services/webserver-cluster?ref=v0.0.1"
   
   cluster_name           = "werservers-prod"
   db_remote_state_bucket = "${var.db_remote_state_bucket}"

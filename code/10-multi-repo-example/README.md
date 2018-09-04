@@ -11,7 +11,7 @@ The environments are:
 It uses in common for both environments:
 
 * Terraform Remote State example: [live/global/s3](live/global/s3)
-* Terraform Web Server Cluster module example in another repo: [https://github.com/alfonsof/terraform-examples-repo-aws](https://github.com/alfonsof/terraform-examples-repo-aws)
+* Terraform Web Server Cluster module example in another repo: [https://github.com/alfonsof/terraform-aws-repo-examples](https://github.com/alfonsof/terraform-aws-repo-examples)
 
 It uses for staging environment:
 
@@ -80,7 +80,7 @@ It uses for production environment:
 
 * Use Terraform Remote State example for creating the remote state bucket. See: [live/global/s3](live/global/s3)
 
-* Use Terraform module example (in another repo) for Web Server Cluster example in the staging environment and Web Server Cluster example in the production environment. See: [https://github.com/alfonsof/terraform-examples-repo-aws](https://github.com/alfonsof/terraform-examples-repo-aws)
+* Use Terraform module example (in another repo) for Web Server Cluster example in the staging environment and Web Server Cluster example in the production environment. See: [https://github.com/alfonsof/terraform-aws-repo-examples](https://github.com/alfonsof/terraform-aws-repo-examples)
 
 * Use Terraform MySQL on RDS example for creating a MySQL database in the staging environment. See: [live/stage/data-stores/mysql](live/stage/data-stores/mysql)
 
