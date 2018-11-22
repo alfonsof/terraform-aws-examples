@@ -1,7 +1,4 @@
-output "address" {
-  value = "${aws_db_instance.example.address}"
-}
-
-output "port" {
-  value = "${aws_db_instance.example.port}"
+# Input variable: DB password
+variable "db_password" {
+  description = "The password for the database"
 }

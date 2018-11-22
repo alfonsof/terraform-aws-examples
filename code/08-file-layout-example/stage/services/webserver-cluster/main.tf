@@ -1,9 +1,12 @@
+# Configure the AWS provider
 provider "aws" {
   region = "eu-west-1"
 }
- 
+
+# Data source: query the list of availability zones
 data "aws_availability_zones" "all" {}
 
+# Data source: DB remote state
 data "terraform_remote_state" "db" {
   backend = "s3"
   
@@ -14,23 +17,25 @@ data "terraform_remote_state" "db" {
   }
 }
 
+# Data source: Template file
 data "template_file" "user_data" {
   template = "${file("user-data.sh")}"
   
   vars {
     server_port = "${var.server_port}"
-    db_address = "${data.terraform_remote_state.db.address}"
-    db_port = "${data.terraform_remote_state.db.port}"
+    db_address  = "${data.terraform_remote_state.db.address}"
+    db_port     = "${data.terraform_remote_state.db.port}"
   }
 }
 
+# Create a Security Group for an EC2 instance
 resource "aws_security_group" "instance" {
   name = "terraform-example-instance"
   
   ingress {
-    from_port	= "${var.server_port}"
-    to_port		= "${var.server_port}"
-    protocol	= "tcp"
+    from_port	  = "${var.server_port}"
+    to_port		  = "${var.server_port}"
+    protocol	  = "tcp"
     cidr_blocks	= ["0.0.0.0/0"]
   }
 
@@ -39,26 +44,28 @@ resource "aws_security_group" "instance" {
   }
 }
 
+# Create a Security Group for an ELB
 resource "aws_security_group" "elb" {
   name = "terraform-example-elb"
   
   ingress {
     from_port	  = 80
-    to_port	  = 80
+    to_port	    = 80
     protocol	  = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
     from_port	  = 0
-    to_port	  = 0
+    to_port	    = 0
     protocol	  = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
+# Create a Launch Configuration
 resource "aws_launch_configuration" "example" {
-  image_id	  = "ami-785db401"
+  image_id	      = "ami-785db401"
   instance_type   = "t2.micro"
   security_groups = ["${aws_security_group.instance.id}"]
   user_data       = "${data.template_file.user_data.rendered}"
@@ -68,6 +75,7 @@ resource "aws_launch_configuration" "example" {
   }
 }
 
+# Create an Autoscaling Group
 resource "aws_autoscaling_group" "example" {
   launch_configuration = "${aws_launch_configuration.example.id}"
   availability_zones   = ["${data.aws_availability_zones.all.names}"]
@@ -85,6 +93,7 @@ resource "aws_autoscaling_group" "example" {
   }
 }
 
+# Create an ELB
 resource "aws_elb" "example" {
   name               = "terraform-asg-example"
   availability_zones = ["${data.aws_availability_zones.all.names}"]
@@ -105,4 +114,3 @@ resource "aws_elb" "example" {
     target              = "HTTP:${var.server_port}/"
   }
 }
-

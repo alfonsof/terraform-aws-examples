@@ -6,7 +6,7 @@ provider "aws" {
 # Data source: query the list of availability zones
 data "aws_availability_zones" "all" {}
 
-# Create a Security Group for an EC2 instance 
+# Create a Security Group for an EC2 instance
 resource "aws_security_group" "instance" {
   name = "terraform-example-instance"
   

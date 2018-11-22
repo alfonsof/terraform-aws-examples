@@ -1,7 +1,8 @@
-output "address" {
-  value = "${aws_db_instance.example.address}"
-}
-
-output "port" {
-  value = "${aws_db_instance.example.port}"
+# Define Terraform backend using a S3 bucket for storing the Terraform state
+terraform {
+  backend "s3" {
+    bucket = "terraform-state-my-bucket"
+    key = "file-layout/stage/data-stores/mysql/terraform.tfstate"
+    region = "eu-west-1"
+ }
 }
