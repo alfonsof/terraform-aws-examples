@@ -27,6 +27,7 @@ It uses for production environment:
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
 * You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
+* It uses the Terraform AWS Provider that interacts with the many resources supported by AWS through its APIs.
 * This code was written for Terraform 0.10.x.
 
 ## Using the code
@@ -71,12 +72,6 @@ It uses for production environment:
     set AWS_ACCESS_KEY_ID=<your_access_key_id>
     set AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
     ```
-
-* The first command that should be run after writing a new Terraform configuration is the terraform `init command` in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
-
-  ```bash
-  terraform init
-  ```
 
 * Use Terraform Remote State example for creating the remote state bucket. See: [live/global/s3](live/global/s3)
 

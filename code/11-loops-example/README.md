@@ -15,6 +15,7 @@ We use the meta-paramenter "count" and two interpolation functions:
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
 * You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
+* It uses the Terraform AWS Provider that interacts with the many resources supported by AWS through its APIs.
 * This code was written for Terraform 0.10.x.
 
 ## Using the code
@@ -60,7 +61,9 @@ We use the meta-paramenter "count" and two interpolation functions:
     set AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
     ```
 
-* The first command that should be run after writing a new Terraform configuration is the terraform `init command` in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
+* Initialize working directory.
+
+  The first command that should be run after writing a new Terraform configuration is the `terraform init` command in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
 
   ```bash
   terraform init

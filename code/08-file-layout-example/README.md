@@ -2,17 +2,35 @@
 
 This folder contains a File Layout example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 
+This is the file layout:
+
+```bash
+stage
+    ├── services/
+    │   └── webserver-cluster/
+    │       ├── main.tf
+    │       └── (etc)
+    └── data-stores/
+        └── mysql/
+            ├── main.tf
+            └── (etc)
+global
+    └── s3/
+        ├── main.tf
+        └── (etc)
+```
+
 It uses:
 
 * Terraform Remote State example: [global/s3](global/s3)
 * Terraform MySQL on RDS example: [stage/data-stores/mysql](stage/data-stores/mysql)
 * Terraform Web Server Cluster example: [stage/services/webserver-cluster](stage/services/webserver-cluster)
 
-
 ## Requirements
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
 * You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
+* It uses the Terraform AWS Provider that interacts with the many resources supported by AWS through its APIs.
 * This code was written for Terraform 0.10.x.
 
 ## Using the code
@@ -57,12 +75,6 @@ It uses:
     set AWS_ACCESS_KEY_ID=<your_access_key_id>
     set AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
     ```
-
-* The first command that should be run after writing a new Terraform configuration is the terraform `init command` in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
-
-  ```bash
-  terraform init
-  ```
 
 * Use Terraform Remote State example for creating the remote state bucket. See: [global/s3](global/s3)
 
