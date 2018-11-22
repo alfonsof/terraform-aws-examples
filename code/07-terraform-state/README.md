@@ -10,6 +10,7 @@ This information is stored in the Terraform state file `terraform.tfstate`. This
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
 * You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
+* It uses the Terraform AWS Provider that interacts with the many resources supported by AWS through its APIs.
 * This code was written for Terraform 0.10.x.
 
 ## Using the code
@@ -55,31 +56,43 @@ This information is stored in the Terraform state file `terraform.tfstate`. This
     set AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
     ```
 
-* The first command that should be run after writing a new Terraform configuration is the terraform `init command` in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
+* Initialize working directory.
+
+  The first command that should be run after writing a new Terraform configuration is the `terraform init` command in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
 
   ```bash
   terraform init
   ```
 
-* Validate the changes:
+* Modify configuration.
+
+  You have to modify the S3 bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
+
+* Validate the changes.
+
+  Run command:
 
   ```bash
   terraform plan
   ```
 
-* Deploy the changes:
+* Deploy the changes.
+
+  Run command:
 
   ```bash
   terraform apply
   ```
 
-* Test the deploy:
+* Test the deploy.
 
   When the `terraform apply` command completes, use the AWS console, you should see the `terraform.tfstate` file created in the S3 bucket.
 
   The `terraform.tfstate` file is where is stored the terraform state.
 
-* Clean up the resources created when you have finished:
+* Clean up the resources created.
+
+  When you have finished, run command:
 
   ```bash
   terraform destroy

@@ -8,6 +8,7 @@ This Terraform file deploys a single web server on AWS (Amazon Web Services). Th
 
 * You must have [Terraform](https://www.terraform.io/) installed on your computer.
 * You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
+* It uses the Terraform AWS Provider that interacts with the many resources supported by AWS through its APIs.
 * This code was written for Terraform 0.10.x.
 
 ## Using the code
@@ -53,25 +54,31 @@ This Terraform file deploys a single web server on AWS (Amazon Web Services). Th
     set AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
     ```
 
-* The first command that should be run after writing a new Terraform configuration is the terraform `init command` in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
+* Initialize working directory.
+
+  The first command that should be run after writing a new Terraform configuration is the `terraform init` command in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
 
   ```bash
   terraform init
   ```
 
-* Validate the changes:
+* Validate the changes.
+
+  Run command:
 
   ```bash
   terraform plan
   ```
 
-* Deploy the changes:
+* Deploy the changes.
+
+  Run command:
 
   ```bash
   terraform apply
   ```
 
-* Test the web server:
+* Test the web server.
 
   When the `terraform apply` command completes, it will output the public IP address of the web server.
 
@@ -80,14 +87,16 @@ This Terraform file deploys a single web server on AWS (Amazon Web Services). Th
   * Running this command:
 
     ```bash
-    curl http://(server_public_ip):8080/
+    curl http://<server_public_ip>:8080/
     ```
 
-  * Writing in your browser this URL: `http://(server_public_ip):8080/`
+  * Writing in your browser this URL: `http://<server_public_ip>:8080/`
 
   You should get a `Hello, World` response message.
 
-* Clean up the resources created when you have finished:
+* Clean up the resources created.
+
+  When you have finished, run command:
 
   ```bash
   terraform destroy
