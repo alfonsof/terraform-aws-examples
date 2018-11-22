@@ -23,7 +23,7 @@ This Terraform file deploys a MySQL database using RDS in Amazon Web Services (A
   terraform init
   ```
 
-* Manage database password.
+* Configure database password.
 
   The database password is managed by the `db_password` input variable.
 

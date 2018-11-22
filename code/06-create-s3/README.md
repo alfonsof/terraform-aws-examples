@@ -100,6 +100,13 @@ This Terraform file deploys the creation of a S3 bucket on AWS (Amazon Web Servi
 
     Change the value of the `default` attribute of `bucket_name` input variable in `vars.tf` file.
 
+    ```hcl
+    variable "bucket_name" {
+      description = "The name of the S3 bucket. Must be globally unique."
+      default = "<YOUR_BUCKET_NAME>"
+    }
+    ```
+
 * Validate the changes.
 
   Run command:

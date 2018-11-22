@@ -15,15 +15,6 @@ This Terraform file deploys the creation of a bucket in AWS (Amazon Web Services
 
 * Configure your AWS access keys.
 
-* You may want to specify a name for your bucket in `vars.tf` using the `default` attribute:
-
-  ```hcl
-  variable "bucket_name" {
-    description = "The name of the S3 bucket. Must be globally unique."
-    default = "<YOUR_BUCKET_NAME>"
-  }
-  ```
-
 * Initialize working directory.
 
   The first command that should be run after writing a new Terraform configuration is the `terraform init` command in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
@@ -69,6 +60,13 @@ This Terraform file deploys the creation of a bucket in AWS (Amazon Web Services
   * Variable defaults.
 
     Change the value of the `default` attribute of `bucket_name` input variable in `vars.tf` file.
+
+    ```hcl
+    variable "bucket_name" {
+      description = "The name of the S3 bucket. Must be globally unique."
+      default = "<YOUR_BUCKET_NAME>"
+    }
+    ```
 
 * Validate the changes.
 
