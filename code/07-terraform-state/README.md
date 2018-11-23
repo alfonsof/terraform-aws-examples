@@ -66,7 +66,11 @@ This information is stored in the Terraform state file `terraform.tfstate`. This
 
 * Modify configuration.
 
-  You have to modify the S3 bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
+  You must modify the S3 bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
+
+  ```bash
+  bucket = "<YOUR_BUCKET_NAME>"
+  ```
 
 * Validate the changes.
 
