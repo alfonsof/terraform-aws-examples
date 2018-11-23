@@ -2,7 +2,7 @@
 
 This folder contains a MySQL on RDS example of a Terraform file [Terraform](https://www.terraform.io/).
 
-This Terraform file deploys a MySQL database using RDS in Amazon Web Services (AWS)
+This Terraform file deploys a MySQL database using RDS on AWS (Amazon Web Services).
 
 ## Requirements
 
@@ -51,11 +51,7 @@ This Terraform file deploys a MySQL database using RDS in Amazon Web Services (A
 
 * Test the deploy.
 
-  Test the cluster of web servers. When the `apply` command completes, it will output the DNS name of the load balancer.
-
-  ```bash
-  curl http://<elb_dns_name>/
-  ```
+  You should see a new RDS MySQL database on AWS (Amazon Web Services).
 
 * Clean up the resources created.
 

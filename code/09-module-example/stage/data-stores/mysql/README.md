@@ -2,11 +2,11 @@
 
 This folder contains a MySQL on RDS example of a Terraform file [Terraform](https://www.terraform.io/).
 
-This Terraform file deploys a MySQL database using RDS in Amazon Web Services (AWS)
+This Terraform file deploys a MySQL database using RDS on AWS (Amazon Web Services).
 
 ## Requirements
 
-* You must have [Terraform](https://www.terraform.io/) installed on your computer. 
+* You must have [Terraform](https://www.terraform.io/) installed on your computer.
 * You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
 * It uses the Terraform AWS Provider that interacts with the many resources supported by AWS through its APIs.
 * This code was written for Terraform 0.10.x.
@@ -48,6 +48,10 @@ This Terraform file deploys a MySQL database using RDS in Amazon Web Services (A
   ```bash
   terraform apply
   ```
+
+* Test the deploy.
+
+  You should see a new RDS MySQL database on AWS (Amazon Web Services).
 
 * Clean up the resources created.
 
