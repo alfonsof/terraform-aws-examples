@@ -2,7 +2,9 @@
 
 This folder contains a module example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 
-It shows how to develop (not duplicating code) web server clusters in different environments using a module. The environments are:
+It shows how to develop (not duplicating code) web server clusters in different environments using a module.
+
+The environments are:
 
 * Staging (stage)
 * Production (prod)

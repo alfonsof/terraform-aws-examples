@@ -3,10 +3,51 @@
 This folder contains a multi repo example of a [Terraform](https://www.terraform.io/) file on AWS (Amazon Web Services).
 
 It shows how to develop (not duplicating code) web server clusters in different environments using a module in another repo in order to use different version of the module in the environments.
+
 The environments are:
 
 * Staging (stage)
 * Production (prod)
+
+This is the file layout in this repo:
+
+```bash
+live
+    ├── global
+    │       └── s3/
+    │           ├── main.tf
+    │           └── (etc)
+    │
+    ├── stage
+    │       ├── services/
+    │       │   └── webserver-cluster/
+    │       │       ├── main.tf
+    │       │       └── (etc)
+    │       └── data-stores/
+    │           └── mysql/
+    │               ├── main.tf
+    │               └── (etc)
+    │
+    └── prod
+            ├── services/
+            │   └── webserver-cluster/
+            │       ├── main.tf
+            │       └── (etc)
+            └── data-stores/
+                └── mysql/
+                    ├── main.tf
+                    └── (etc)
+```
+
+This is the file layout used from another repo:
+
+```bash
+modules
+    └── services/
+        └── webserver-cluster/
+            ├── main.tf
+            └── (etc)
+```
 
 It uses in common for both environments:
 

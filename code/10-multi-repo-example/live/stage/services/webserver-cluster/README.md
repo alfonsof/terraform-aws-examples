@@ -1,57 +1,81 @@
 # Terraform Web Server Cluster example (staging environment)
 
-This folder contains a Web Server Cluster example of a Terraform file (https://www.terraform.io/).
-This Terraform file deploys a cluster of web servers in Amazon Web Services (AWS) using EC2 and Auto Scaling, and a load balancer using ELB.
+This folder contains a Web Server Cluster example of a Terraform file [Terraform](https://www.terraform.io/).
+
+This Terraform file deploys a cluster of web servers on AWS (Amazon Web Services) using EC2 and Auto Scaling, and a load balancer using ELB.
+
 The cluster of web servers returns "Hello, World" for the URL `/`. The load balancer listens on port 80.
 
 ## Requirements
 
-* You must have [Terraform](https://www.terraform.io/) installed on your computer. 
-* You must have an [Amazon Web Services (AWS) account](http://aws.amazon.com/).
+* You must have [Terraform](https://www.terraform.io/) installed on your computer.
+* You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
+* It uses the Terraform AWS Provider that interacts with the many resources supported by AWS through its APIs.
+* This code was written for Terraform 0.10.x.
 * You must deploy the MySQL database in [data-stores/mysql](../../data-stores/mysql) BEFORE deploying the
   templates in this folder.
 * This uses a Terraform module in another repo. See
 [https://github.com/alfonsof/terraform-aws-repo-examples](https://github.com/alfonsof/terraform-aws-repo-examples).
 
-This code was written for Terraform 0.10.x.
-
 ## Using the code
 
-Configure your AWS access keys
+* Configure your AWS access keys.
 
-In `vars.tf`, fill in the name of the S3 bucket and key where the remote state is stored for the MySQL database
-(you must deploy the templates in [data-stores/mysql](../../data-stores/mysql) first):
+* Initialize working directory.
 
-```hcl
-variable "db_remote_state_bucket" {
-  description = "The name of the S3 bucket used for the database's remote state storage"
-}
+  The first command that should be run after writing a new Terraform configuration is the `terraform init` command in order to initialize a working directory containing Terraform configuration files. It is safe to run this command multiple times.
 
-variable "db_remote_state_key" {
-  description = "The name of the key in the S3 bucket used for the database's remote state storage"
-}
-```
+  ```bash
+  terraform init
+  ```
 
-Validate the changes:
+* Configure Terraform backend.
 
-```
-terraform plan
-```
+  Modify the S3 bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
 
-Deploy the changes:
+  ```bash
+  bucket = "<YOUR_BUCKET_NAME>"
+  ```
 
-```
-terraform apply
-```
+* Configure the bucket used for the database's remote state storage.
+
+  Modify the S3 bucket name which is defined in the `bucket` attribute in `vars.tf` file. Important! You must deploy the templates in [data-stores/mysql](../../data-stores/mysql) first:
+
+  ```hcl
+  variable "db_remote_state_bucket" {
+    description = "The name of the S3 bucket used for the database's remote state storage"
+    default     =  "<YOUR_BUCKET_NAME>"
+  }
+  ```
+
+* Validate the changes.
+
+  Run command:
+
+  ```bash
+  terraform plan
+  ```
+
+* Deploy the changes.
+
+  Run command:
+
+  ```bash
+  terraform apply
+  ```
+
+* Test the cluster of web servers.
 
 Test the cluster of web servers. When the `apply` command completes, it will output the DNS name of the load balancer.
 
-```
-curl http://(elb_dns_name)/
-```
+  ```bash
+  curl http://<elb_dns_name>/
+  ```
 
-Clean up the resources created when you have finished:
+* Clean up the resources created.
 
-```
-terraform destroy
-```
+  When you have finished, run command:
+
+  ```bash
+  terraform destroy
+  ```
