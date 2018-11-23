@@ -2,11 +2,11 @@
 
 This folder contains an example of a Terraform file [Terraform](https://www.terraform.io/) that create a S3 bucket that can be used for remote state storage.
 
-This Terraform file deploys the creation a of a bucket in Amazon Web Services (AWS) using S3.
+This Terraform file deploys the creation a of a bucket on AWS (Amazon Web Services) using S3.
 
 ## Requirements
 
-* You must have [Terraform](https://www.terraform.io/) installed on your computer. 
+* You must have [Terraform](https://www.terraform.io/) installed on your computer.
 * You must have an [AWS (Amazon Web Services)](http://aws.amazon.com/) account.
 * It uses the Terraform AWS Provider that interacts with the many resources supported by AWS through its APIs.
 * This code was written for Terraform 0.10.x.
