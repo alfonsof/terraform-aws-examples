@@ -64,7 +64,7 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
 
 * Test the cluster of web servers.
 
-Test the cluster of web servers. When the `apply` command completes, it will output the DNS name of the load balancer.
+  Test the cluster of web servers. When the `apply` command completes, it will output the DNS name of the load balancer.
 
   ```bash
   curl http://<elb_dns_name>/
