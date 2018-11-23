@@ -62,7 +62,7 @@ This Terraform file deploys the creation of a S3 bucket on AWS (Amazon Web Servi
   terraform init
   ```
 
-* Modify configuration.
+* Configure S3 bucket name.
 
   You must modify the S3 bucket name, which is defined as an input variable `bucket_name` in `vars.tf` file.
 

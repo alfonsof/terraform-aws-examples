@@ -64,7 +64,7 @@ This information is stored in the Terraform state file `terraform.tfstate`. This
   terraform init
   ```
 
-* Modify configuration.
+* Configure Terraform backend.
 
   You must modify the S3 bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
 

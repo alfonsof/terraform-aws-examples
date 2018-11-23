@@ -23,6 +23,14 @@ This Terraform file deploys a MySQL database using RDS on AWS (Amazon Web Servic
   terraform init
   ```
 
+* Configure Terraform backend.
+
+  Modify the S3 bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
+
+  ```bash
+  bucket = "<YOUR_BUCKET_NAME>"
+  ```
+
 * Configure database password.
 
   The database password is managed by the `db_password` input variable.

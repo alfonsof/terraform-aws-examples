@@ -27,22 +27,24 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
   terraform init
   ```
 
-* Configuration.
+* Configure Terraform backend.
 
-  * Modify the S3 bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
+  Modify the S3 bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
 
-    ```bash
-    bucket = "<YOUR_BUCKET_NAME>"
-    ```
+  ```bash
+  bucket = "<YOUR_BUCKET_NAME>"
+  ```
 
-  * Modify the S3 bucket name which is defined in the `bucket` attribute in `vars.tf` file. Important! You must deploy the templates in [data-stores/mysql](../../data-stores/mysql) first:
+* Configure the bucket used for the database's remote state storage.
 
-    ```hcl
-    variable "db_remote_state_bucket" {
-      description = "The name of the S3 bucket used for the database's remote state storage"
-      default     =  "<YOUR_BUCKET_NAME>"
-    }
-    ```
+  Modify the S3 bucket name which is defined in the `bucket` attribute in `vars.tf` file. Important! You must deploy the templates in [data-stores/mysql](../../data-stores/mysql) first:
+
+  ```hcl
+  variable "db_remote_state_bucket" {
+    description = "The name of the S3 bucket used for the database's remote state storage"
+    default     =  "<YOUR_BUCKET_NAME>"
+  }
+  ```
 
 * Validate the changes.
 
