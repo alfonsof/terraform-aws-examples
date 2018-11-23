@@ -25,20 +25,20 @@ This Terraform file deploys the creation of a bucket in AWS (Amazon Web Services
 
 * Modify configuration.
 
-  You have to modify the S3 bucket name, which is defined as an input variable `bucket_name` in `vars.tf` file.
+  You must modify the S3 bucket name, which is defined as an input variable `bucket_name` in `vars.tf` file.
 
-  If you want to modify the S3 bucket name you will be able to do it in several ways:
+  You can modify the S3 bucket name in several ways:
 
   * Loading variables from command line flags.
 
     Run Terraform commands in this way:
 
     ```bash
-    terraform plan -var 'bucket_name=terraform-state-my-bucket'
+    terraform plan -var 'bucket_name=<YOUR_BUCKET_NAME>'
     ```
 
     ```bash
-    terraform apply -var 'bucket_name=terraform-state-my-bucket'
+    terraform apply -var 'bucket_name=<YOUR_BUCKET_NAME>'
     ```
 
   * Loading variables from a file.
@@ -46,7 +46,7 @@ This Terraform file deploys the creation of a bucket in AWS (Amazon Web Services
     When Terraform runs it will look for a file called `terraform.tfvars`. You can populate this file with variable values that will be loaded when Terraform runs. An example for the content of the `terraform.tfvars` file:
 
     ```bash
-    bucket_name = "terraform-state-my-bucket"
+    bucket_name = "<YOUR_BUCKET_NAME>"
     ```
 
   * Loading variables from environment variables.
@@ -54,7 +54,7 @@ This Terraform file deploys the creation of a bucket in AWS (Amazon Web Services
     Terraform will also parse any environment variables that are prefixed with `TF_VAR`. You can create an environment variable `TF_VAR_bucket_name`:
 
     ```bash
-    TF_VAR_bucket_name=terraform-state-my-bucket
+    TF_VAR_bucket_name=<YOUR_BUCKET_NAME>
     ```
 
   * Variable defaults.

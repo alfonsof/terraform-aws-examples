@@ -27,17 +27,16 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
 
   * Modify the S3 bucket name, which is defined in the `bucket` attribute in `backend.tf` file.
 
-  * Modify the `default` attribute in `vars.tf` file, with the name of the S3 bucket and key where the remote state is stored for the MySQL database. You must deploy the templates in [data-stores/mysql](../../data-stores/mysql) first:
+    ```bash
+    bucket = "<YOUR_BUCKET_NAME>"
+    ```
+
+  * Modify the S3 bucket name which is defined in the `bucket` attribute in `vars.tf` file. Important! You must deploy the templates in [data-stores/mysql](../../data-stores/mysql) first:
 
     ```hcl
     variable "db_remote_state_bucket" {
       description = "The name of the S3 bucket used for the database's remote state storage"
-      default     =  "terraform-state-my-bucket"
-    }
-
-    variable "db_remote_state_key" {
-      description = "The name of the key in the S3 bucket used for the database's remote state storage"
-      default     = "file-layout-example/stage/data-stores/mysql/terraform.tfstate"
+      default     =  "<YOUR_BUCKET_NAME>"
     }
     ```
 
