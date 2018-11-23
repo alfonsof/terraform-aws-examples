@@ -4,5 +4,5 @@ terraform {
     bucket = "terraform-state-my-bucket"
     key = "file-layout/stage/data-stores/mysql/terraform.tfstate"
     region = "eu-west-1"
- }
+  }
 }

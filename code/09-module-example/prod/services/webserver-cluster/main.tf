@@ -1,7 +1,9 @@
+# Configure the AWS provider
 provider "aws" {
   region = "eu-west-1"
 }
- 
+
+# Use Module
 module "webserver_cluster" {
   source = "../../../modules/services/webserver-cluster"
   
@@ -14,6 +16,7 @@ module "webserver_cluster" {
   max_size      = 10
 }
 
+# Create an Autoscaling Schedule
 resource "aws_autoscaling_schedule" "scale_out_during_business_hours" {
   scheduled_action_name = "scale-out-during-business-hours"
   min_size              = 2
@@ -24,6 +27,7 @@ resource "aws_autoscaling_schedule" "scale_out_during_business_hours" {
   autoscaling_group_name = "${module.webserver_cluster.asg_name}"
 }
 
+# Create an Autoscaling Schedule
 resource "aws_autoscaling_schedule" "scale_in_at_night" {
   scheduled_action_name = "scale-in-at-night"
   min_size              = 2
