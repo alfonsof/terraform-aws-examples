@@ -7,9 +7,20 @@ It shows how to develop (not duplicating code) web server clusters in different 
 * Staging (stage)
 * Production (prod)
 
-This is the structure:
+This is the file layout:
 
 ```bash
+global
+    └── s3/
+        ├── main.tf
+        └── (etc)
+
+modules
+    └── services/
+        └── webserver-cluster/
+            ├── main.tf
+            └── (etc)
+
 stage
     ├── services/
     │   └── webserver-cluster/
@@ -19,10 +30,16 @@ stage
         └── mysql/
             ├── main.tf
             └── (etc)
-global
-    └── s3/
-        ├── main.tf
-        └── (etc)
+
+prod
+    ├── services/
+    │   └── webserver-cluster/
+    │       ├── main.tf
+    │       └── (etc)
+    └── data-stores/
+        └── mysql/
+            ├── main.tf
+            └── (etc)
 ```
 
 It uses in common for both environments:

@@ -5,6 +5,11 @@ This folder contains a File Layout example of a [Terraform](https://www.terrafor
 This is the file layout:
 
 ```bash
+global
+    └── s3/
+        ├── main.tf
+        └── (etc)
+
 stage
     ├── services/
     │   └── webserver-cluster/
@@ -14,10 +19,6 @@ stage
         └── mysql/
             ├── main.tf
             └── (etc)
-global
-    └── s3/
-        ├── main.tf
-        └── (etc)
 ```
 
 It uses:

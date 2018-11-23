@@ -1,7 +1,9 @@
 # Terraform Web Server Cluster example
 
 This folder contains a Web Server Cluster example of a Terraform file [Terraform](https://www.terraform.io/).
+
 This Terraform file deploys a cluster of web servers in Amazon Web Services (AWS) using EC2 and Auto Scaling, and a load balancer using ELB.
+
 The cluster of web servers returns "Hello, World" for the URL `/`. The load balancer listens on port 80.
 
 ## Requirements
