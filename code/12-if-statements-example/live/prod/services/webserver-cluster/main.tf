@@ -1,7 +1,9 @@
+# Configure the AWS provider
 provider "aws" {
   region = "eu-west-1"
 }
- 
+
+# Use Module
 module "webserver_cluster" {
   source = "../../../modules/services/webserver-cluster"
   

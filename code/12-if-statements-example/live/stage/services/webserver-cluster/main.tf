@@ -1,7 +1,9 @@
+# Configure the AWS provider
 provider "aws" {
   region = "eu-west-1"
 }
- 
+
+# Use Module
 module "webserver_cluster" {
   source = "../../../modules/services/webserver-cluster"
   
@@ -16,6 +18,7 @@ module "webserver_cluster" {
   enable_new_user_data = true
 }
 
+# Create a Security Group Rule
 resource "aws_security_group_rule" "allow_testing_inbound" {
   type              = "ingress"
   security_group_id = "${module.webserver_cluster.elb_security_group_id}"

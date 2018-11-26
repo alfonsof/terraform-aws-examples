@@ -1,5 +1,7 @@
+# Data source: query the list of availability zones
 data "aws_availability_zones" "all" {}
 
+# Data source: DB remote state
 data "terraform_remote_state" "db" {
   backend = "s3"
   
@@ -10,6 +12,7 @@ data "terraform_remote_state" "db" {
   }
 }
 
+# Data source: Template file
 data "template_file" "user_data" {
   count = "${1 - var.enable_new_user_data}"
 
@@ -22,6 +25,7 @@ data "template_file" "user_data" {
   }
 }
 
+# Data source: Template file
 data "template_file" "user_data_new" {
   count = "${var.enable_new_user_data}"
   
@@ -32,6 +36,7 @@ data "template_file" "user_data_new" {
   }
 }
 
+# Create a Security Group for an EC2 instance
 resource "aws_security_group" "instance" {
   name = "${var.cluster_name}-instance"
   
@@ -40,6 +45,7 @@ resource "aws_security_group" "instance" {
   }
 }
 
+# Create a Security Group Rule
 resource "aws_security_group_rule" "allow_server_http_inbound" {
   type = "ingress"
   security_group_id = "${aws_security_group.instance.id}"
@@ -51,10 +57,12 @@ resource "aws_security_group_rule" "allow_server_http_inbound" {
 
 }
 
+# Create a Security Group for an ELB
 resource "aws_security_group" "elb" {
   name = "${var.cluster_name}-elb"
 }
 
+# Create a Security Group Rule, inbound
 resource "aws_security_group_rule" "allow_http_inbound" {
   type              = "ingress"
   security_group_id = "${aws_security_group.elb.id}"
@@ -65,6 +73,7 @@ resource "aws_security_group_rule" "allow_http_inbound" {
   cidr_blocks = ["0.0.0.0/0"]
 }
 
+# Create a Security Group Rule, outbound
 resource "aws_security_group_rule" "allow_all_outbound" {
   type              = "egress"
   security_group_id = "${aws_security_group.elb.id}"
@@ -75,6 +84,7 @@ resource "aws_security_group_rule" "allow_all_outbound" {
   cidr_blocks = ["0.0.0.0/0"]
 }
 
+# Create a Launch Configuration
 resource "aws_launch_configuration" "example" {
   image_id		  = "ami-785db401"
   instance_type   = "${var.instance_type}"
@@ -90,6 +100,7 @@ resource "aws_launch_configuration" "example" {
   }
 }
 
+# Create an Autoscaling Group
 resource "aws_autoscaling_group" "example" {
   launch_configuration = "${aws_launch_configuration.example.id}"
   availability_zones   = ["${data.aws_availability_zones.all.names}"]
@@ -106,6 +117,7 @@ resource "aws_autoscaling_group" "example" {
   }
 }
 
+# Create an ELB
 resource "aws_elb" "example" {
   name               = "${var.cluster_name}"
   availability_zones = ["${data.aws_availability_zones.all.names}"]
@@ -127,6 +139,7 @@ resource "aws_elb" "example" {
   }
 }
 
+# Create an Autoscaling Schedule
 resource "aws_autoscaling_schedule" "scale_out_during_business_hours" {
   count = "${var.enable_autoscaling}"
 
@@ -139,6 +152,7 @@ resource "aws_autoscaling_schedule" "scale_out_during_business_hours" {
   autoscaling_group_name = "${aws_autoscaling_group.example.name}"
 }
 
+# Create an Autoscaling Schedule
 resource "aws_autoscaling_schedule" "scale_in_at_night" {
   count = "${var.enable_autoscaling}"
   
@@ -151,6 +165,7 @@ resource "aws_autoscaling_schedule" "scale_in_at_night" {
   autoscaling_group_name = "${aws_autoscaling_group.example.name}"
 }
 
+# Create an Autoscaling Metric Alarm
 resource "aws_cloudwatch_metric_alarm" "high_cpu_utilisation" {
   alarm_name  = "${var.cluster_name}-high-cpu-utilisation"
   namespace   = "AWS/EC2"
@@ -168,6 +183,7 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu_utilisation" {
   unit                = "Percent"
 }
 
+# Create an Autoscaling Metric Alarm
 resource "aws_cloudwatch_metric_alarm" "low_cpu_credit_balance" {
   count = "${format("%.1s", var.instance_type) == "t" ? 1 : 0}"
   
