@@ -32,25 +32,63 @@ where:
 * if "enable_new_user_data" is true (staging environment) the execute "user_data_new.sh"
 * if "enable_new_user_data" is false (production environment) the execute "user_data.sh"
 
-Furthermore, it shows how to develop (not duplicating code) web server clusters in different environments using a module. The environments are:
+Furthermore, it shows how to develop (not duplicating code) web server clusters in different environments using a module.
+
+The environments are:
 
 * Staging (stage)
 * Production (prod)
 
+This is the file layout in this repo:
+
+```bash
+live
+    ├── global
+    │       └── s3/
+    │           ├── main.tf
+    │           └── (etc)
+    │
+    ├── stage
+    │       ├── services/
+    │       │   └── webserver-cluster/
+    │       │       ├── main.tf
+    │       │       └── (etc)
+    │       └── data-stores/
+    │           └── mysql/
+    │               ├── main.tf
+    │               └── (etc)
+    │
+    └── prod
+            ├── services/
+            │   └── webserver-cluster/
+            │       ├── main.tf
+            │       └── (etc)
+            └── data-stores/
+                └── mysql/
+                    ├── main.tf
+                    └── (etc)
+
+modules
+    └── services/
+        └── webserver-cluster/
+            ├── main.tf
+            └── (etc)
+```
+
 It uses in common for both environments:
 
-* Terraform Remote State example: [global/s3](global/s3)
+* Terraform Remote State example: [live/global/s3](live/global/s3)
 * Terraform Web Server Cluster module example: [modules/services/webserver-cluster](modules/services/webserver-cluster)
 
 It uses for staging environment:
 
-* Terraform MySQL on RDS example (staging environment): [stage/data-stores/mysql](stage/data-stores/mysql)
-* Terraform Web Server Cluster example (staging environment): [stage/services/webserver-cluster](stage/services/webserver-cluster)
+* Terraform MySQL on RDS example (staging environment): [live/stage/data-stores/mysql](live/stage/data-stores/mysql)
+* Terraform Web Server Cluster example (staging environment): [live/stage/services/webserver-cluster](live/stage/services/webserver-cluster)
 
 It uses for production environment:
 
-* Terraform MySQL on RDS example (production environment): [prod/data-stores/mysql](prod/data-stores/mysql)
-* Terraform Web Server Cluster example (production environment): [prod/services/webserver-cluster](prod/services/webserver-cluster)
+* Terraform MySQL on RDS example (production environment): [live/prod/data-stores/mysql](live/prod/data-stores/mysql)
+* Terraform Web Server Cluster example (production environment): [live/prod/services/webserver-cluster](live/prod/services/webserver-cluster)
 
 ## Requirements
 
@@ -102,14 +140,14 @@ It uses for production environment:
     set AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
     ```
 
-* Use Terraform Remote State example for creating the remote state bucket. See: [global/s3](global/s3)
+* Use Terraform Remote State example for creating the remote state bucket. See: [live/global/s3](live/global/s3)
 
 * Use Terraform module example for Web Server Cluster example in the staging environment and Web Server Cluster example in the production environment. See: [modules/services/webserver-cluster](modules/services/webserver-cluster)
 
-* Use Terraform MySQL on RDS example for creating a MySQL database in the staging environment. See: [stage/data-stores/mysql](stage/data-stores/mysql)
+* Use Terraform MySQL on RDS example for creating a MySQL database in the staging environment. See: [live/stage/data-stores/mysql](live/stage/data-stores/mysql)
 
-* Use Terraform Web Server Cluster example for creating a web server cluster in the staging environment. See: [stage/services/webserver-cluster](stage/services/webserver-cluster)
+* Use Terraform Web Server Cluster example for creating a web server cluster in the staging environment. See: [live/stage/services/webserver-cluster](live/stage/services/webserver-cluster)
 
-* Use Terraform MySQL on RDS example for creating a MySQL database in the production environment. See: [prod/data-stores/mysql](prod/data-stores/mysql)
+* Use Terraform MySQL on RDS example for creating a MySQL database in the production environment. See: [live/prod/data-stores/mysql](live/prod/data-stores/mysql)
 
-* Use Terraform Web Server Cluster example for creating a web server cluster in the production environment. See: [prod/services/webserver-cluster](prod/services/webserver-cluster)
+* Use Terraform Web Server Cluster example for creating a web server cluster in the production environment. See: [live/prod/services/webserver-cluster](live/prod/services/webserver-cluster)
