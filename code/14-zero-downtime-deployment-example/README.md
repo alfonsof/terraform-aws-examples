@@ -1,6 +1,6 @@
-# Terraform zero downtime deployment example
+# Terraform Zero-Downtime Deployment example
 
-This folder contains a zero downtime deployment example of a [Terraform](https://www.terraform.io/) installed on your computer file on AWS (Amazon Web Services).
+This folder contains a zero-downtime deployment example of a [Terraform](https://www.terraform.io/) installed on your computer file on AWS (Amazon Web Services).
 
 It shows how to deploy a new AMI across the cluster when you have made changes to your code. In addition, you control the text the User Data script return from its one-liner HTTP server.
 
