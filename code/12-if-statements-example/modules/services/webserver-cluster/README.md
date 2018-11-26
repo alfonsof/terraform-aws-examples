@@ -2,7 +2,7 @@
 
 This folder contains a Web Server Cluster module example of a Terraform file [Terraform](https://www.terraform.io/).
 
-This Terraform file define a cluster of web servers module in Amazon Web Services (AWS) using EC2 and Auto Scaling, and a load balancer using ELB.
+This Terraform file define a cluster of web servers module on AWS (Amazon Web Services) using EC2 and Auto Scaling, and a load balancer using ELB.
 
 The cluster of web servers returns "Hello, World" for the URL `/`. The load balancer listens on port 80.
 
@@ -15,6 +15,5 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
 
 ## Using the code
 
-Terraform modules are not meant to be deployed directly. Instead, you should be using them from other templates. See
-[stage/services/webserver-cluster](../../../stage/services-webserver-cluster) and
+Terraform modules are not meant to be deployed directly. Instead, you should be using them from other templates. See [stage/services/webserver-cluster](../../../stage/services-webserver-cluster) and
 [prod/services/webserver-cluster](../../../prod/services-webserver-cluster) for examples.
