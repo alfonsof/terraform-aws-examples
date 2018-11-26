@@ -6,7 +6,7 @@ It shows how do a simple If-Else-Statement in Terraform.
 
 This Terraform file create 3 IAM users, create an IAM policy and attach the IAM policy to the IAM users.
 
-We use the meta-paramenter "count" and two interpolation functions:
+We use the meta-parameter "count" and two interpolation functions:
 
 * "${element(LIST, INDEX)}"
 * "${length(LIST)}"
@@ -89,6 +89,10 @@ We use "give_neo_cloudwatch_full_access" variable in order to give one of the us
   ```bash
   terraform apply
   ```
+
+* Test the deployment.
+
+  You should see 3 IAM users, an IAM policy and the IAM policy attached to the IAM users.
 
 * Clean up the resources created.
 

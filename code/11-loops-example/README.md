@@ -6,7 +6,7 @@ It shows how do loops in Terraform.
 
 This Terraform file create 3 IAM users, create an IAM policy and attach the IAM policy to the IAM users.
 
-We use the meta-paramenter "count" and two interpolation functions:
+We use the meta-parameter "count" and two interpolation functions:
 
 * "${element(LIST, INDEX)}"
 * "${length(LIST)}"
@@ -80,6 +80,10 @@ We use the meta-paramenter "count" and two interpolation functions:
   ```bash
   terraform apply
   ```
+
+* Test the deployment.
+
+  You should see 3 IAM users, an IAM policy and the IAM policy attached to the IAM users.
 
 * Clean up the resources created when you have finished:
 
