@@ -15,5 +15,5 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
 
 ## Using the code
 
-Terraform modules are not meant to be deployed directly. Instead, you should be using them from other templates. See [live/stage/services/webserver-cluster](../../../live/stage/services-webserver-cluster) and
-[live/prod/services/webserver-cluster](../../../live/prod/services-webserver-cluster) for examples.
+Terraform modules are not meant to be deployed directly. Instead, you should be using them from other templates. See [live/stage/services/webserver-cluster](../../../live/stage/services/webserver-cluster) and
+[live/prod/services/webserver-cluster](../../../live/prod/services/webserver-cluster) for examples.
