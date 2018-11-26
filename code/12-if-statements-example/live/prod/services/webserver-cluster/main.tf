@@ -5,7 +5,7 @@ provider "aws" {
 
 # Use Module
 module "webserver_cluster" {
-  source = "../../../modules/services/webserver-cluster"
+  source = "../../../../modules/services/webserver-cluster"
   
   cluster_name           = "werservers-prod"
   db_remote_state_bucket = "${var.db_remote_state_bucket}"
