@@ -14,7 +14,7 @@ The cluster of web servers returns "Hello, World" for the URL `/`. The load bala
 * This code was written for Terraform 0.10.x.
 * You must deploy the MySQL database in [data-stores/mysql](../../data-stores/mysql) BEFORE deploying the
   templates in this folder.
-* This uses a Terraform module. See [modules/services/webserver-cluster](../../../modules/services/webserver-cluster).
+* This uses a Terraform module. See [modules/services/webserver-cluster](../../../../modules/services/webserver-cluster).
 
 ## Using the code
 
