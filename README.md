@@ -31,7 +31,7 @@ This is the list of examples:
 * [11-loops-example](code/11-loops-example) - Terraform Loops: Example that contains the loops example of a Terraform file on AWS (Amazon Web Services).
 * [12-if-statements-example](code/12-if-statements-example) - Terraform If-Statements & If-Else-Statements: Example that contains an If-Statements and If-Else-Statements example of a Terraform file on AWS (Amazon Web Services).
 * [13-if-else-statements-example](code/13-if-else-statements-example) - Terraform Simple If-Else-Statement: Example that contains the simple If-Else-Statement example of a Terraform file on AWS (Amazon Web Services).
-* [14-zero-downtime-deployment-example](code/14-zero-downtime-deployment-example) - Terraform Zero-Downtime Deployment: Example that contains a zero-downtime deployment example of a Terraform file on AWS (Amazon Web Services).
+* [14-zero-downtime-deployment](code/14-zero-downtime-deployment) - Terraform Zero-Downtime Deployment: Example that contains a zero-downtime deployment example of a Terraform file on AWS (Amazon Web Services).
 
 ## License
 
